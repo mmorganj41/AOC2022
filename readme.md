@@ -1,0 +1,1 @@
+My attempt at advent of code 2022 in rust to learn rust.
