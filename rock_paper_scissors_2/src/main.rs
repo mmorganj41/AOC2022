@@ -36,6 +36,7 @@ static SCORE_ARRAY_FROM_RESULT: phf::Map<char, u32> = phf_map! {
     'Z' => 6,
 };
 
+/// Read the input file and print out expected scores using two different interpretations
 fn main() {
     let score = parse_lines_part_1(read_file("input"));
     println!("Anticipated score for part one: {score}");
@@ -65,6 +66,7 @@ fn parse_lines_part_1(reader: BufReader<File>) -> u32 {
     total_score
 }
 
+/// Parse a line into characters representing the two players' moves
 fn determine_moves(line: &str) -> (char, char) {
     let mut info = line.splitn(2, ' ');
 
@@ -88,6 +90,7 @@ fn get_points_from_winning(other_move: char, player_move: char) -> u32 {
     }
 }
 
+/// Parse a line into the other player's move and your action
 fn line_to_move_and_action(line: &str) -> (char, char) {
     let mut info = line.splitn(2, ' ');
 
